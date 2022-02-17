@@ -27,7 +27,7 @@ namespace REST_Api_Application
         {
             context.Request.EnableBuffering();
 
-            await using var requestStream = new MemoryStream();
+            var requestStream = new MemoryStream();
             await context.Request.Body.CopyToAsync(requestStream);
 
             requestStream.Position = 0;
